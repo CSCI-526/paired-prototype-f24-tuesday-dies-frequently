@@ -6,10 +6,18 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    //movement variables
     [SerializeField] protected float speed = 5.0f;
     [SerializeField] protected float jumpForce = 5.0f;
     [SerializeField] protected Rigidbody rb;
     private UnityEngine.Vector3 direction;
+
+    //shooting variables
+    [SerializeField] float fireRate = 5.0f;
+    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject gunBarrel;
+    private float timeSinceLastShot = 0.0f;
+
 
     private void Update()
     {
@@ -17,7 +25,7 @@ public class CharacterController : MonoBehaviour
         HandleMoveInput();
 
         //shoot on left(click)
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
             Shoot();
         }
@@ -34,6 +42,9 @@ public class CharacterController : MonoBehaviour
 
         //look at mouse
         LookAtMouse();
+
+        //update shot time
+        timeSinceLastShot += Time.fixedDeltaTime;
     }
     private void Jump()
     {
@@ -46,7 +57,11 @@ public class CharacterController : MonoBehaviour
 
     private void Shoot()
     {
-        throw new NotImplementedException();
+        if((timeSinceLastShot > 1 / fireRate) && projectile && gunBarrel)
+        {
+            var bullet = Instantiate(projectile, gunBarrel.transform.position, gunBarrel.transform.rotation);
+            timeSinceLastShot = 0;
+        }
     }
 
     void LookAtMouse()

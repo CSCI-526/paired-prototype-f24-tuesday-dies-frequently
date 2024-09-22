@@ -1234,6 +1234,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4147723846594889038, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1356194520742884125, guid: 3122d44ab508044c6bb60bd1e220411b, type: 3}
+    - target: {fileID: 4147723846594889038, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: turret
+      value: 
+      objectReference: {fileID: 1272256851593019809, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
     - target: {fileID: 4880232203954208577, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
       propertyPath: m_Name
       value: Character

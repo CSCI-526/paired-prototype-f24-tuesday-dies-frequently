@@ -17,7 +17,10 @@ public class EnemyMove : MonoBehaviour
     }
     void Start()
     {
-        
+        if(_target == null)
+        {
+            _target = GameManager.Instance.player;
+        }
     }
 
     // Update is called once per frame

@@ -20,7 +20,8 @@ public class SpawnPoint : MonoBehaviour
         if(enemyPrefabs.Count > 0)
         {
             GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-            Instantiate(enemyToSpawn);
+            GameObject enemy = Instantiate(enemyToSpawn);
+            enemy.transform.position = transform.position;
         }
         else
         {
@@ -28,8 +29,9 @@ public class SpawnPoint : MonoBehaviour
         }
     }
 
-    public void SpawnEnemyOfType(GameObject enemy)
+    public void SpawnEnemyOfType(GameObject prefab)
     {
-        Instantiate(enemy);
+        GameObject enemy = Instantiate(prefab);
+        enemy.transform.position = transform.position;
     }
 }

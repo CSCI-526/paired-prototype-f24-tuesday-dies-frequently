@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -31,5 +32,6 @@ public class EnemyMove : MonoBehaviour
         dirToTarget.Normalize();
         _rb.MovePosition(transform.position + dirToTarget * moveSpeed * Time.fixedDeltaTime);
 
+        transform.rotation = UnityEngine.Quaternion.LookRotation(dirToTarget, Vector3.up);
     }
 }

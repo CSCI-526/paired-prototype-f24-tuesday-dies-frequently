@@ -7,13 +7,15 @@ public class WaveManager : MonoBehaviour
 {
 
     [SerializeField] protected int maxEnemies = 10;
-    [SerializeField] protected float spawnInterval = 5.0f;
+    [SerializeField] protected float waveInterval = 5.0f;
+    [SerializeField] protected float maxSpawnDelay = 2.0f;
 
     [SerializeField] public int enemyCount = 0;
     [SerializeField] List<GameObject> enemyPrefabs = new List<GameObject>();
-
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+
+    float timeSinceLastWave;
     private void Awake()
     {
     }
@@ -28,17 +30,20 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyCount == 0)
+        if(enemyCount == 0 && timeSinceLastWave > waveInterval)
         {
             SpawnWave();
+            timeSinceLastWave = 0.0f;
         }
+        timeSinceLastWave += Time.deltaTime;
     }
 
     void SpawnWave()
     {
         foreach (SpawnPoint sp in spawnPoints)
         {
-            sp.SpawnEnemy();
+            sp.SpawnEnemy(Random.Range(0.0f,maxSpawnDelay));
+            sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay));
         }
     }
 }

@@ -16,13 +16,11 @@ public class SpawnPoint : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(float delay = 0.0f)
     {
         if(enemyPrefabs.Count > 0)
         {
-            GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-            GameObject enemy = Instantiate(enemyToSpawn);
-            enemy.transform.position = transform.position;
+            StartCoroutine(DelayedSpawn(delay));
         }
         else
         {
@@ -35,5 +33,13 @@ public class SpawnPoint : MonoBehaviour
         GameObject enemy = Instantiate(prefab);
         enemy.transform.position = transform.position;
         enemy.GetComponent<EnemyMove>().SetTarget(GameManager.Instance.Player);
+    }
+
+    IEnumerator DelayedSpawn(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+        GameObject enemy = Instantiate(enemyToSpawn);
+        enemy.transform.position = transform.position;
     }
 }

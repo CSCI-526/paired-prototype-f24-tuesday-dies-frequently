@@ -5,10 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    [SerializeField] public GameObject player { get; private set; }
-    [SerializeField] public WaveManager WaveManager { get; private set; }
 
-    private void Awake()
+    void Awake()
     {
         if (Instance == null && Instance != this)
         {
@@ -16,6 +14,10 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    void Start()
+    {
     }
 
 

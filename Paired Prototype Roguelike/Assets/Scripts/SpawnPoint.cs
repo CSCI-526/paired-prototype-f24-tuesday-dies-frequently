@@ -22,6 +22,8 @@ public class SpawnPoint : MonoBehaviour
             GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
             GameObject enemy = Instantiate(enemyToSpawn);
             enemy.transform.position = transform.position;
+            WaveManager.enemyCount++;
+            //Debug.Log(WaveManager.enemyCount);
         }
         else
         {
@@ -33,5 +35,6 @@ public class SpawnPoint : MonoBehaviour
     {
         GameObject enemy = Instantiate(prefab);
         enemy.transform.position = transform.position;
+        WaveManager.enemyCount++;
     }
 }

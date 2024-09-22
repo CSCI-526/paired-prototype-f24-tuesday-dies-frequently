@@ -17,10 +17,7 @@ public class EnemyMove : MonoBehaviour
     }
     void Start()
     {
-        if(_target == null)
-        {
-            _target = GameManager.Instance.player;
-        }
+        _target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -37,5 +34,10 @@ public class EnemyMove : MonoBehaviour
         _rb.MovePosition(transform.position + dirToTarget * moveSpeed * Time.fixedDeltaTime);
 
         transform.rotation = UnityEngine.Quaternion.LookRotation(dirToTarget, Vector3.up);
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        _target = target;
     }
 }

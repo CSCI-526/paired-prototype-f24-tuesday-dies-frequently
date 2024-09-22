@@ -5,33 +5,23 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public static WaveManager Instance {  get; private set; }
 
     [SerializeField] protected int maxEnemies = 10;
     [SerializeField] protected float spawnInterval = 5.0f;
-    [SerializeField] List<GameObject> spawnPoints = new List<GameObject>();
+    [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
-    [SerializeField] int enemyCount = 0;
+    [SerializeField] public static int enemyCount = 0;
     [SerializeField] List<GameObject> enemyPrefabs = new List<GameObject>();
 
     private void Awake()
     {
-        if(Instance == null && Instance != this)
-        {
-            Destroy(this);
-        }
-
-        Instance = this;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject spawnpoint in spawnPoints)
-        {
-            
-        }
+        //SpawnWave();
     }
 
     // Update is called once per frame
@@ -40,11 +30,11 @@ public class WaveManager : MonoBehaviour
         
     }
 
-    void SpawnInitialWave()
+    void SpawnWave()
     {
-        foreach (GameObject spawnpoint in spawnPoints)
+        foreach (SpawnPoint sp in spawnPoints)
         {
-
+            sp.SpawnEnemy();
         }
     }
 }

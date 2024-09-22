@@ -17,7 +17,7 @@ public class EnemyMove : MonoBehaviour
     }
     void Start()
     {
-        _target = GameObject.FindGameObjectWithTag("Player");
+        SetTarget(GameManager.Instance.Player);
     }
 
     // Update is called once per frame

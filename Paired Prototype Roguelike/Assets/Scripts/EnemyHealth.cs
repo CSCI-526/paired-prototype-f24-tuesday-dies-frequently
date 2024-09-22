@@ -14,6 +14,9 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        GameManager.Instance.WaveManager.enemyCount++;
+        GameManager.Instance.WaveManager.enemies.Add(this.gameObject);
+        //Debug.Log(GameManager.Instance.WaveManager.enemyCount);
     }
 
     // Update is called once per frame
@@ -47,6 +50,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        GameManager.Instance.WaveManager.enemyCount--;
+        GameManager.Instance.WaveManager.enemies.Remove(this.gameObject);
+
+        //Debug.Log(GameManager.Instance.WaveManager.enemyCount);
         Destroy(gameObject);
     }
 }

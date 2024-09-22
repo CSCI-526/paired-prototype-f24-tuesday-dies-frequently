@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CharacterController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float fireRate = 5.0f;
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject gunBarrel;
+    [SerializeField] GameObject wall;
+    [SerializeField] GameObject turret;
     private float timeSinceLastShot = 0.0f;
 
 
@@ -25,7 +28,7 @@ public class CharacterController : MonoBehaviour
         HandleMoveInput();
 
         //shoot on left(click)
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             Shoot();
         }
@@ -33,6 +36,24 @@ public class CharacterController : MonoBehaviour
         {
             Jump();
         }
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            buildWall();
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            buildTurret();
+        }
+    }
+
+    private void buildTurret()
+    {
+        var gunTurret = Instantiate(turret, transform.position+(transform.forward*3)+(transform.up*0.5f), transform.rotation * UnityEngine.Quaternion.Euler (0f, -90f, 0f));
+    }
+
+    private void buildWall()
+    {   
+        var defensiveWall = Instantiate(wall, transform.position+(transform.forward*2)+(transform.right*-2), transform.rotation * UnityEngine.Quaternion.Euler (90f, 0f, 0f));
     }
 
     void FixedUpdate()
@@ -48,7 +69,7 @@ public class CharacterController : MonoBehaviour
     }
     private void Jump()
     {
-        if(transform.position.y < 1.01) 
+        if (transform.position.y < 1.01)
         {
             rb.AddForce(new UnityEngine.Vector3(0.0f, jumpForce, 0.0f));
         }
@@ -56,7 +77,7 @@ public class CharacterController : MonoBehaviour
 
     private void Shoot()
     {
-        if((timeSinceLastShot > 1 / fireRate) && projectile && gunBarrel)
+        if ((timeSinceLastShot > 1 / fireRate) && projectile && gunBarrel)
         {
             var bullet = Instantiate(projectile, gunBarrel.transform.position, gunBarrel.transform.rotation);
             timeSinceLastShot = 0;

@@ -29,6 +29,7 @@ public class EnemyMove : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 dirToTarget = _target.transform.position - _rb.transform.position;
+        dirToTarget.y = 0.0f;
         dirToTarget.Normalize();
         _rb.MovePosition(transform.position + dirToTarget * moveSpeed * Time.fixedDeltaTime);
 

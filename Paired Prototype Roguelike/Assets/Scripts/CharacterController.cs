@@ -51,7 +51,6 @@ public class CharacterController : MonoBehaviour
         if(transform.position.y < 1.01) 
         {
             rb.AddForce(new UnityEngine.Vector3(0.0f, jumpForce, 0.0f));
-            Debug.Log("Jump!");
         }
     }
 

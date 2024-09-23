@@ -11,6 +11,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] protected float maxSpawnDelay = 2.0f;
 
     [SerializeField] public int enemyCount = 0;
+    [SerializeField] public int wave = 0;
+
     [SerializeField] List<GameObject> enemyPrefabs = new List<GameObject>();
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
@@ -40,10 +42,12 @@ public class WaveManager : MonoBehaviour
 
     void SpawnWave()
     {
+        ++wave;
         foreach (SpawnPoint sp in spawnPoints)
         {
-            sp.SpawnEnemy(Random.Range(0.0f,maxSpawnDelay));
+            sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay));
             sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay));
         }
+        GameManager.Instance.UIManager.UpdateUI();
     }
 }

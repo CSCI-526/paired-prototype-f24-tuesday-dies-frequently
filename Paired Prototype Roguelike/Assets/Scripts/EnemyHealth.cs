@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
         isInvincible = false;
     }
 
-    private void Die()
+    public void Die()
     {
         GameManager.Instance.WaveManager.enemyCount--;
         GameManager.Instance.WaveManager.enemies.Remove(this.gameObject);

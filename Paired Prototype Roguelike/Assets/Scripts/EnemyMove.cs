@@ -17,7 +17,7 @@ public class EnemyMove : MonoBehaviour
     }
     void Start()
     {
-        SetTarget(GameManager.Instance.Player);
+        SetTarget(GameManager.Instance.Nexus);
     }
 
     // Update is called once per frame
@@ -28,6 +28,11 @@ public class EnemyMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!_target)
+        {
+            SetTarget(GameManager.Instance.Nexus);
+        }
+
         Vector3 dirToTarget = _target.transform.position - _rb.transform.position;
         dirToTarget.y = 0.0f;
         dirToTarget.Normalize();
@@ -39,5 +44,18 @@ public class EnemyMove : MonoBehaviour
     public void SetTarget(GameObject target)
     {
         _target = target;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Nexus"))
+        {
+            collision.gameObject.GetComponent<Nexus>().TakeDamage();
+            GetComponent<EnemyHealth>().Die();
+        }
+        else if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage();
+        }
     }
 }

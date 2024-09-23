@@ -256,9 +256,10 @@ GameObject:
   - component: {fileID: 4186868421150343785}
   - component: {fileID: 1615652832181997374}
   - component: {fileID: 4147723846594889038}
+  - component: {fileID: 1267738778565106773}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,11 +394,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 200
+  jumpForce: 300
   rb: {fileID: 1615652832181997374}
   fireRate: 5
   projectile: {fileID: 1733587294317518391, guid: 86a87e10bc563614bb77ae58fdf9d8c5, type: 3}
   gunBarrel: {fileID: 2143742393447370335}
+  wall: {fileID: 1356194520742884125, guid: 3122d44ab508044c6bb60bd1e220411b, type: 3}
+  turret: {fileID: 1272256851593019809, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
+--- !u!114 &1267738778565106773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880232203954208577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b91f1110e2e3d640b83ef27f5cbb2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  invincibilityDuration: 0.01
+  currentHealth: 0
 --- !u!1 &7782645869315754156
 GameObject:
   m_ObjectHideFlags: 0

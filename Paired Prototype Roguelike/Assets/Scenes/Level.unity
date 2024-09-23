@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 698863421}
   - component: {fileID: 698863420}
   - component: {fileID: 698863419}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778642671}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,6 +630,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4880232203954208577, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
   m_PrefabInstance: {fileID: 5539716671808902584}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &870464429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870464421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebd38b94730f294e8e3fd9fa88ecb64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeableObjectPrefabs:
+  - {fileID: 6852214484739291977, guid: 5c6dcd31d3038d64e853cefcb9d02f05, type: 3}
+  - {fileID: 1272256851593019809, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
+  currentPlaceableObject: {fileID: 0}
 --- !u!1 &917944709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1194,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4880232203954208577, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 870464429}
   m_SourcePrefab: {fileID: 100100000, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
 --- !u!1001 &6394137816754856717
 PrefabInstance:

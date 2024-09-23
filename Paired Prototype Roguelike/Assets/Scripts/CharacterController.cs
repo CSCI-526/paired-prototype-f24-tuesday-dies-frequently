@@ -36,25 +36,10 @@ public class CharacterController : MonoBehaviour
         {
             Jump();
         }
-        if (Input.GetKeyUp(KeyCode.Alpha1))
-        {
-            buildWall();
-        }
-        if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            buildTurret();
-        }
+
     }
 
-    private void buildTurret()
-    {
-        var gunTurret = Instantiate(turret, transform.position+(transform.forward*3)+(transform.up*0.5f), transform.rotation * UnityEngine.Quaternion.Euler (0f, -90f, 0f));
-    }
 
-    private void buildWall()
-    {   
-        var defensiveWall = Instantiate(wall, transform.position+(transform.forward*2)+(transform.right*-2), transform.rotation * UnityEngine.Quaternion.Euler (90f, 0f, 0f));
-    }
 
     void FixedUpdate()
     {

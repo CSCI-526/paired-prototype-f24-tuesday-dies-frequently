@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject _target;
+    private GameObject _target;
     private Rigidbody _rb;
+
+    private List<GameObject> targetList = new List<GameObject>();
 
     public float moveSpeed = 0.1f;
 
@@ -17,20 +21,31 @@ public class EnemyMove : MonoBehaviour
     }
     void Start()
     {
-        SetTarget(GameManager.Instance.Nexus);
+        // SetTarget(GameManager.Instance.Nexus);
+        UpdateTargetList();
+    }
+
+    private void UpdateTargetList()
+    {
+        targetList = GameObject.FindGameObjectsWithTag("Nexus").ToList();
+        targetList.Add(GameObject.FindWithTag("Player"));
+
+        Debug.Log("target List: "+targetList.Count());
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {   
+        SetTarget(targetList);
+        // Debug.Log("target list: "+_target.name);
     }
 
     void FixedUpdate()
     {
         if(!_target)
         {
-            SetTarget(GameManager.Instance.Nexus);
+            SetTarget(targetList);
+            // Debug.Log("target: "+_target.name);
         }
 
         Vector3 dirToTarget = _target.transform.position - _rb.transform.position;
@@ -41,9 +56,21 @@ public class EnemyMove : MonoBehaviour
         transform.rotation = UnityEngine.Quaternion.LookRotation(dirToTarget, Vector3.up);
     }
 
-    public void SetTarget(GameObject target)
-    {
-        _target = target;
+    private void SetTarget(List<GameObject> targetList)
+    {   
+        float closest = Int32.MaxValue; //add your max range here
+        GameObject closestObject = null;
+        for (int i = 0; i < targetList.Count(); i++)  //list of gameObjects to search through
+        {
+          float dist = Vector3.Distance(targetList[ i ].transform.position, transform.position);
+          if (dist < closest)
+          {
+            closest = dist;
+            closestObject = targetList[ i ];
+          }
+        }
+        // Debug.Log("closest: "+closestObject.name);
+        _target = closestObject; 
     }
 
     private void OnCollisionEnter(Collision collision)

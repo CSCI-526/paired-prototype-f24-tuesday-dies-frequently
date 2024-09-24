@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class turretShoot : Building
 {   
     private float timeSinceLastShot = 0.0f;
     [SerializeField] float fireRate = 5.0f;
+    [SerializeField] float maxRange = 50.0f;
+    [SerializeField] float turnSpeed = 15.0f;
+
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject gunBarrel;
+    [SerializeField] GameObject target;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +26,8 @@ public class turretShoot : Building
     {
         if(placed)
         {
+            FindTarget();
+            Aim();
             Shoot();
         }
     }
@@ -30,10 +39,44 @@ public class turretShoot : Building
 
     private void Shoot()
     {
-        if ((timeSinceLastShot > 1 / fireRate) && projectile && gunBarrel)
+        if (target && (timeSinceLastShot > 1 / fireRate) && projectile && gunBarrel)
         {
-            var bullet = Instantiate(projectile, gunBarrel.transform.position, gunBarrel.transform.rotation);
-            timeSinceLastShot = 0;
+            Vector3 toTarget = (target.transform.position - transform.position).normalized;
+            if(Vector3.Dot(toTarget,transform.forward) > 0.9)
+            {
+                var bullet = Instantiate(projectile, gunBarrel.transform.position, gunBarrel.transform.rotation);
+                timeSinceLastShot = 0;
+            }
+        }
+    }
+
+    private void Aim()
+    {
+        if(target != null)
+        {
+            Vector3 toTarget = (target.transform.position - transform.position).normalized;
+            toTarget.y = 0.0f;
+           
+            Debug.DrawRay(transform.position, toTarget, Color.red);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, toTarget, turnSpeed * Time.deltaTime, 0.0f);
+
+            Debug.DrawRay(transform.position, newDirection, Color.red);
+            transform.rotation = Quaternion.LookRotation(newDirection);
+        }
+    }
+
+    private void FindTarget()
+    {
+        target = null;
+        float minRange = maxRange;
+        foreach(GameObject enemy in GameManager.Instance.WaveManager.enemies)
+        {
+            float dist = (enemy.transform.position - transform.position).magnitude;
+            if (dist < minRange)
+            {
+                target = enemy;
+                minRange = dist;
+            }
         }
     }
 }

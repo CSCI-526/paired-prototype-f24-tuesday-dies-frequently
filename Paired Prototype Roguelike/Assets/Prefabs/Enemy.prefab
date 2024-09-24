@@ -143,6 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   invincibilityDuration: 0.01
+  exp: {fileID: 6435648702068270667, guid: 08541f6d46a47df46ba546e927cd8967, type: 3}
+  xpDropRate: 0.5
 --- !u!136 &8803482667701268275
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] public int maxHealth = 5;
     [SerializeField] public float invincibilityDuration = 0.01f;
+    [SerializeField] public GameObject exp;
+
+    [SerializeField] public float xpDropRate = 0.5f;  
 
     private int currentHealth;
     private bool isInvincible = false;
@@ -52,8 +55,15 @@ public class EnemyHealth : MonoBehaviour
     {
         GameManager.Instance.WaveManager.enemyCount--;
         GameManager.Instance.WaveManager.enemies.Remove(this.gameObject);
-
+        DropExp();
         //Debug.Log(GameManager.Instance.WaveManager.enemyCount);
         Destroy(gameObject);
+    }
+
+    public void DropExp(){
+        if (Random.Range(0.0f, 1.0f) >= xpDropRate){
+            GameObject xp = Instantiate(exp);
+            xp.transform.position = transform.position;
+        }
     }
 }

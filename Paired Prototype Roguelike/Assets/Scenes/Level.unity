@@ -1171,6 +1171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 8531904022790211960, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: rotateIncrement
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9119464077508629886, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.15

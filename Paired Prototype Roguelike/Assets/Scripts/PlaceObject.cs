@@ -11,7 +11,7 @@ public class PlaceObject : MonoBehaviour
     private GameObject currentPlaceableObject;
     private float buildingRotation;
     private int currentPrefabIndex = -1;
-
+    [SerializeField] protected float rotateIncrement = 10.0f;
 
     private void Update()
     {
@@ -49,7 +49,6 @@ public class PlaceObject : MonoBehaviour
                     }
 
                     currentPlaceableObject = Instantiate(placeableObjectPrefabs[i]);
-                    //currentPlaceableObject.GetComponent<Collider>().enabled = false;
                     currentPrefabIndex = i;
                 }
 
@@ -70,8 +69,6 @@ public class PlaceObject : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, 10000, layer_mask))
         {
-            //currentPlaceableObject.GetComponent<Collider>().enabled = true;
-
             currentPlaceableObject.transform.position = hitInfo.point;
             currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
         }
@@ -104,7 +101,7 @@ public class PlaceObject : MonoBehaviour
         {
             buildingRotation += 1;
         }
-        currentPlaceableObject.transform.Rotate(Vector3.up, buildingRotation * 10f);
+        currentPlaceableObject.transform.Rotate(Vector3.up, buildingRotation * rotateIncrement);
     }
 
 }

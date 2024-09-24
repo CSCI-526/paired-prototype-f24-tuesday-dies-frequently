@@ -9,7 +9,7 @@ public class PlaceObject : MonoBehaviour
     private GameObject[] placeableObjectPrefabs;
     [SerializeField]
     private GameObject currentPlaceableObject;
-    private float mouseWheelRotation;
+    private float buildingRotation;
     private int currentPrefabIndex = -1;
 
 
@@ -22,6 +22,7 @@ public class PlaceObject : MonoBehaviour
         {
             MoveCurrentObjectToMouse();
             RotateFromMouseWheel();
+            RotateFromQE();
             ReleaseIfClicked();
         }
 
@@ -79,15 +80,31 @@ public class PlaceObject : MonoBehaviour
     private void RotateFromMouseWheel()
     {
         Debug.Log(Input.mouseScrollDelta);
-        mouseWheelRotation += Input.mouseScrollDelta.y;
-        currentPlaceableObject.transform.Rotate(Vector3.up, mouseWheelRotation * 10f);
+        buildingRotation += Input.mouseScrollDelta.y;
+        currentPlaceableObject.transform.Rotate(Vector3.up, buildingRotation * 10f);
     }
 
     private void ReleaseIfClicked()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Building b = currentPlaceableObject.GetComponent<Building>();
+            b.OnPlace();
             currentPlaceableObject = null;
         }
     }
+
+    private void RotateFromQE()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            buildingRotation -= 1;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            buildingRotation += 1;
+        }
+        currentPlaceableObject.transform.Rotate(Vector3.up, buildingRotation * 10f);
+    }
+
 }

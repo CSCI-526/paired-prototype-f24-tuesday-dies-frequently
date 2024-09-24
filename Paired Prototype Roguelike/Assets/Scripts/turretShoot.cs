@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turretShoot : MonoBehaviour
+public class turretShoot : Building
 {   
     private float timeSinceLastShot = 0.0f;
     [SerializeField] float fireRate = 5.0f;
@@ -17,7 +17,10 @@ public class turretShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        if(placed)
+        {
+            Shoot();
+        }
     }
 
     void FixedUpdate()

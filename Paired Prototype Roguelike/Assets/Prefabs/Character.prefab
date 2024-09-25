@@ -434,7 +434,7 @@ MonoBehaviour:
   - {fileID: 6852214484739291977, guid: 5c6dcd31d3038d64e853cefcb9d02f05, type: 3}
   - {fileID: 1272256851593019809, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
   currentPlaceableObject: {fileID: 0}
-  rotateIncrement: 10
+  rotateIncrement: 15
 --- !u!114 &1443082488595280278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +451,8 @@ MonoBehaviour:
   turretOptions:
   - {fileID: 6852214484739291977, guid: 5c6dcd31d3038d64e853cefcb9d02f05, type: 3}
   - {fileID: 1272256851593019809, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
+  currentXP: 0
+  currentLevel: 0
 --- !u!1 &7782645869315754156
 GameObject:
   m_ObjectHideFlags: 0

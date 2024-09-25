@@ -6,6 +6,11 @@ public class ExperiencePickup : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] protected int exp_value = 1;
+    [SerializeField] protected float period = 1.0f;
+    [SerializeField] protected float amplitude = 1.0f;
+
+    private float counter = 0;
+    float dir = 1.0f;
 
     void Start()
     {
@@ -15,7 +20,13 @@ public class ExperiencePickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        counter += Time.deltaTime;
+        if(counter > period)
+        {
+            counter = 0;
+            dir *= -1.0f;
+        }
+        transform.position = transform.position + new Vector3(0, dir * amplitude * Time.deltaTime, 0);
     }
 
     private void OnTriggerEnter(Collider other)

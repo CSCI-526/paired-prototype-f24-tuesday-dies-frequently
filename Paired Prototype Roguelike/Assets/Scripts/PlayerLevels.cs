@@ -56,6 +56,7 @@ public class PlayerLevels : MonoBehaviour
             currentXP -= xpNeededForLevel;
             levels_to_process += 1;
             xpNeededForLevel++;
+            GameManager.Instance.UIManager.ShowRewardScreen();
         }
         GameManager.Instance.UIManager.UpdateUI();
     }

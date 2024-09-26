@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI scoreBoard;
-    [SerializeField] TextMeshProUGUI expUI;
-    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] protected TextMeshProUGUI scoreBoard;
+    [SerializeField] protected TextMeshProUGUI expUI;
+    [SerializeField] protected GameObject gameOverScreen;
+    [SerializeField] protected GameObject rewardMenu;
 
     private Nexus nexus;
     private PlayerHealth playerHP;
@@ -32,6 +33,17 @@ public class UIManager : MonoBehaviour
     public void ShowGameOverScreen()
     {
         gameOverScreen.SetActive(true);
+    }
+
+    public void ShowRewardScreen()
+    {
+        rewardMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+    public void HideRewardScreen()
+    {
+        rewardMenu.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
 

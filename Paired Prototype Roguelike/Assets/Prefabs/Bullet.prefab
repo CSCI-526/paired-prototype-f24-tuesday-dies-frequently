@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   maxLifetime: 2
+  damage: 1

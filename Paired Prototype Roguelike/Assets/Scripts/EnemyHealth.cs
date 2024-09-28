@@ -1,17 +1,17 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
 
-    [SerializeField] public int maxHealth = 5;
+    [SerializeField] public float maxHealth = 5;
     [SerializeField] public float invincibilityDuration = 0.01f;
     [SerializeField] public GameObject exp;
 
     [SerializeField] public float xpDropRate = 0.5f;  
 
-    private int currentHealth;
+    private float currentHealth;
     private bool isInvincible = false;
 
     void Start()
@@ -28,11 +28,11 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
         if (!isInvincible) // Only take damage if not currently invincible
         {
-            currentHealth--;
+            currentHealth-= damage;
             if (currentHealth <= 0)
             {
                 Die();

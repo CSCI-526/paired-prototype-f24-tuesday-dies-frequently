@@ -1250,10 +1250,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1443082488595280278, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: turretOptions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443082488595280278, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: turretOptions.Array.data[2]
+      value: 
+      objectReference: {fileID: 6191134258547235123, guid: bdfb57020aa84e848abb3d6d124ec1c2, type: 3}
+    - target: {fileID: 1443082488595280278, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: turretOptions.Array.data[3]
+      value: 
+      objectReference: {fileID: 3732443334033032084, guid: 1be928d46a8b6db478a64830a4364934, type: 3}
+    - target: {fileID: 1443082488595280278, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: turretOptions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1272256851593019809, guid: 88d92cc50b4e783408df66e4ec9fe34d, type: 3}
     - target: {fileID: 4880232203954208577, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 8531904022790211960, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: placeableObjectPrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531904022790211960, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: placeableObjectPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3732443334033032084, guid: 1be928d46a8b6db478a64830a4364934, type: 3}
+    - target: {fileID: 8531904022790211960, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: placeableObjectPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 6191134258547235123, guid: bdfb57020aa84e848abb3d6d124ec1c2, type: 3}
+    - target: {fileID: 8531904022790211960, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
+      propertyPath: placeableObjectPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1272256851593019809, guid: 88d92cc50b4e783408df66e4ec9fe34d, type: 3}
     - target: {fileID: 9119464077508629886, guid: 6561429c4d31bfb49a0c25b646a528f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.15

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3922522323856123814}
   - component: {fileID: 1677332616392144054}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Low-Caliber Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,4 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   maxLifetime: 2
-  damage: 2
+  damage: 1

@@ -30,7 +30,6 @@ public class EnemyMove : MonoBehaviour
         targetList = GameObject.FindGameObjectsWithTag("Nexus").ToList();
         targetList.Add(GameObject.FindWithTag("Player"));
 
-        Debug.Log("target List: "+targetList.Count());
     }
 
     // Update is called once per frame

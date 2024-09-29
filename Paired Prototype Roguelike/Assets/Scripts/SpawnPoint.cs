@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] protected bool spawnAtStart = true;
     [SerializeField] List<GameObject> enemyPrefabs = new List<GameObject>();
-    public float spawnRange = 5.0f;
+    public float spawnRange = 1.0f;
 
     void Start()
     {
@@ -17,15 +20,20 @@ public class SpawnPoint : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy(float delay = 0.0f)
-    {
+    public void SpawnEnemy(float delay = 0f, int wave = 1, float difficulty = 1.0f)
+    {   
+        
+        int enemyNum = Random.Range(Math.Max(1,wave-3), Math.Max((int)Math.Round(difficulty * wave), 2));
+        UnityEngine.Debug.Log(enemyNum);
         if(enemyPrefabs.Count > 0)
-        {
-            StartCoroutine(DelayedSpawn(delay));
+        {   
+            for(int i = 0; i < enemyNum; i++){
+                StartCoroutine(DelayedSpawn(delay));
+            }
         }
         else
         {
-            Debug.Log("Error: spawning pool not populated");
+            UnityEngine.Debug.Log("Error: spawning pool not populated");
         }
     }
 

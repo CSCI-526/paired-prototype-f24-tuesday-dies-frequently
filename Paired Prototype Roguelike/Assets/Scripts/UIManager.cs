@@ -65,4 +65,9 @@ public class UIManager : MonoBehaviour
                 "\r\nExp: " + playerLevels.currentXP + "/" + playerLevels.xpNeededForLevel;
         }
     }
+
+    public void UpdateRewardsUI(Building b1, Building b2, Building b3)
+    {
+        rewardMenu.GetComponent<RewardChoiceUI>().UpdateRewardChoices(b1, b2, b3);
+    }
 }

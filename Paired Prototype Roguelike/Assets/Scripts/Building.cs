@@ -5,6 +5,9 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     [SerializeField] public bool placed = false;
+    [SerializeField] public string buildingName = "missing name";
+    [SerializeField] public string buildingDesc = "missing description";
+
     public virtual void OnPlace()
     {
         placed = true;

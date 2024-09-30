@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placed: 0
+  buildingName: Gun Turret
+  buildingDesc: A turret with decent range, accuracy, and damage
   fireRate: 2
   maxRange: 15
   turnSpeed: 2

@@ -2357,3 +2357,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placed: 0
+  buildingName: Wall
+  buildingDesc: Blocks enemy movement.

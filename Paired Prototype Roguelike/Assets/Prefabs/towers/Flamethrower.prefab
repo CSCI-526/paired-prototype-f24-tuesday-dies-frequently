@@ -80,6 +80,14 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 3362676759128714227, guid: 941ba87907efe1040b50a830c5cbf0e3, type: 3}
+    - target: {fileID: 5112603536194239189, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
+      propertyPath: buildingDesc
+      value: Excels at frying enemies at close range.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112603536194239189, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
+      propertyPath: buildingName
+      value: Flamethrower Turret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

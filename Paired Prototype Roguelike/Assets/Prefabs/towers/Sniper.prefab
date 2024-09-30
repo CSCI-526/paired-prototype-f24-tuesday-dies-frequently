@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placed: 0
+  buildingName: Sniper Turret
+  buildingDesc: Excels at picking off targets at long range.
   fireRate: 0.5
   maxRange: 50
   turnSpeed: 2

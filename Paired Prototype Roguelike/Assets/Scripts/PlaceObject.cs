@@ -48,8 +48,13 @@ public class PlaceObject : MonoBehaviour
                         Destroy(currentPlaceableObject);
                     }
 
-                    currentPlaceableObject = Instantiate(placeableObjectPrefabs[i]);
-                    currentPrefabIndex = i;
+                    string bName = placeableObjectPrefabs[i].GetComponent<Building>().buildingName;
+                    bool canPlace = GameManager.Instance.InventoryManager.CanPlacebuilding(bName);
+                    if (canPlace)
+                    {
+                        currentPlaceableObject = Instantiate(placeableObjectPrefabs[i]);
+                        currentPrefabIndex = i;
+                    }
                 }
 
                 break;
@@ -83,9 +88,11 @@ public class PlaceObject : MonoBehaviour
 
     private void ReleaseIfClicked()
     {
-        if (Input.GetMouseButtonDown(0))
+        Building b = currentPlaceableObject.GetComponent<Building>();
+        bool canPlace = GameManager.Instance.InventoryManager.CanPlacebuilding(b.buildingName);
+        if (Input.GetMouseButtonDown(0) && canPlace)
         {
-            Building b = currentPlaceableObject.GetComponent<Building>();
+            GameManager.Instance.InventoryManager.TryPlaceBuilding(b.buildingName);
             b.OnPlace();
             currentPlaceableObject = null;
         }

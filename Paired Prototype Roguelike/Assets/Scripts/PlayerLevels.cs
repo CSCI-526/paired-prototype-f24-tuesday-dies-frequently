@@ -22,7 +22,6 @@ public class PlayerLevels : MonoBehaviour
     
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -33,9 +32,9 @@ public class PlayerLevels : MonoBehaviour
             levels_to_process -=1;
             List<GameObject> turretsOptionsTemp = turretOptions;
             for(int i=0; i<2; i++){
-                Debug.Log(turretsOptionsTemp.Count);
+                //Debug.Log(turretsOptionsTemp.Count);
                 int index = Random.Range(0, turretsOptionsTemp.Count);
-                Debug.Log(index);
+                //Debug.Log(index);
                 selectedTurrets.Add(turretsOptionsTemp[index]);
 
                 turretsOptionsTemp.Remove(turretsOptionsTemp[index]);
@@ -51,12 +50,17 @@ public class PlayerLevels : MonoBehaviour
 
     public void add_exp(int xp_gained){
         currentXP += xp_gained;
-        while (currentXP >= xpNeededForLevel){
-            currentLevel += 1;
-            currentXP -= xpNeededForLevel;
-            levels_to_process += 1;
-            xpNeededForLevel++;
+        if(currentXP > xpNeededForLevel)
+        {
+            while (currentXP >= xpNeededForLevel)
+            {
+                currentLevel += 1;
+                currentXP -= xpNeededForLevel;
+                levels_to_process += 1;
+                xpNeededForLevel++;
+            }
             GameManager.Instance.UIManager.ShowRewardScreen();
+            GameManager.Instance.InventoryManager.GenerateRewards();
         }
         GameManager.Instance.UIManager.UpdateUI();
     }

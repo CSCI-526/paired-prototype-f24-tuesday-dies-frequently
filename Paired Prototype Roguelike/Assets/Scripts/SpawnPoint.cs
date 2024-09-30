@@ -24,7 +24,7 @@ public class SpawnPoint : MonoBehaviour
     {   
         
         int enemyNum = Random.Range(Math.Max(1,wave-3), Math.Max((int)Math.Round(difficulty * wave), 2));
-        UnityEngine.Debug.Log(enemyNum);
+        //UnityEngine.Debug.Log(enemyNum);
         if(enemyPrefabs.Count > 0)
         {   
             for(int i = 0; i < enemyNum; i++){

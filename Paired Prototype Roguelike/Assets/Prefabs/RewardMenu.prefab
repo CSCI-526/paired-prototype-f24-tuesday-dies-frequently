@@ -84,13 +84,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1240450294383833263}
+  - component: {fileID: 5089548125383494541}
   m_Layer: 5
   m_Name: RewardMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1240450294383833263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -115,6 +116,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5089548125383494541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569839739221761757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9bb1d0938fc12a4d9f19ddc8dbd14ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel1: {fileID: 440084564235439598}
+  panel2: {fileID: 629307596386030059}
+  panel3: {fileID: 9125692248670227232}
 --- !u!1 &7970831134496788880
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +273,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1240450294383833263}
     m_Modifications:
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9125692248670227232}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideRewardScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RewardPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2377211544244884704, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
       propertyPath: m_Name
       value: Panel (2)
@@ -355,6 +395,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7063254720751716085, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
   m_PrefabInstance: {fileID: 2742827828360411708}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9125692248670227232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6391878497567781148, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+  m_PrefabInstance: {fileID: 2742827828360411708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b2f2191b787348a37d1908be7ba58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5768895944933728503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +414,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1240450294383833263}
     m_Modifications:
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 629307596386030059}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideRewardScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RewardPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2377211544244884704, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
       propertyPath: m_Name
       value: Panel (1)
@@ -456,6 +531,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+--- !u!114 &629307596386030059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6391878497567781148, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+  m_PrefabInstance: {fileID: 5768895944933728503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b2f2191b787348a37d1908be7ba58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3605840630530876930 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7063254720751716085, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
@@ -469,6 +555,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1240450294383833263}
     m_Modifications:
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 440084564235439598}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideRewardScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RewardPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265814148231600522, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2377211544244884704, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
       propertyPath: m_Name
       value: Panel
@@ -558,6 +668,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+--- !u!114 &440084564235439598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6391878497567781148, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}
+  m_PrefabInstance: {fileID: 6822950364105342194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b2f2191b787348a37d1908be7ba58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4371382847460555271 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7063254720751716085, guid: 492327a60057db245973fc6b5aeb32f1, type: 3}

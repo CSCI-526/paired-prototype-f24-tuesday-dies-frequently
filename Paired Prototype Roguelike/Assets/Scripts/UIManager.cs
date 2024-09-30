@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] protected TextMeshProUGUI scoreBoard;
     [SerializeField] protected TextMeshProUGUI expUI;
+    [SerializeField] protected TextMeshProUGUI inventoryUI;
     [SerializeField] protected GameObject gameOverScreen;
     [SerializeField] protected GameObject rewardMenu;
 
@@ -69,5 +70,22 @@ public class UIManager : MonoBehaviour
     public void UpdateRewardsUI(Building b1, Building b2, Building b3)
     {
         rewardMenu.GetComponent<RewardChoiceUI>().UpdateRewardChoices(b1, b2, b3);
+    }
+
+    public void UpdateInventoryUI()
+    {
+        string txt = "Buildings:\n";
+        InventoryManager inv = GameManager.Instance.InventoryManager;
+
+        for(int i = 0; i < inv.buildingCount.Count; i++)
+        {
+            if (inv.buildingCount[i] != 0)
+            {
+                int j = i + 1;
+                txt += "\n" + j + ": " + inv.buildingNames[i] + " x" + inv.buildingCount[i];
+            }
+        }
+
+        inventoryUI.text = txt;
     }
 }

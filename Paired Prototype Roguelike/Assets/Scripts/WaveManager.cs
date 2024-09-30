@@ -13,13 +13,17 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public int enemyCount = 0;
     [SerializeField] public int wave = 0;
     [SerializeField] public float difficulty = 1.2f;
-    [SerializeField] List<GameObject> enemyPrefabs = new List<GameObject>();
+    [SerializeField] public List<GameObject> enemyPrefabs = new List<GameObject>();
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
     float timeSinceLastWave;
     private void Awake()
     {
+        enemies = new List<GameObject>();
+        spawnPoints = new List<SpawnPoint>();
+        enemyCount = 0;
+        wave = 0;
     }
 
 

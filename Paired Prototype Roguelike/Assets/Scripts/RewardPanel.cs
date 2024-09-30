@@ -28,4 +28,12 @@ public class RewardPanel : MonoBehaviour
         rewardName.text = "";
         rewardDescription.text = "";
     }
+
+    public void OnPick()
+    {
+        if (rewardName.text.Length > 0)
+        {
+            GameManager.Instance.InventoryManager.PickReward(rewardName.text);
+        }
+    }
 }

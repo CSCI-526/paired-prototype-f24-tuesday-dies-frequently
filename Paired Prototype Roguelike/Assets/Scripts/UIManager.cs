@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     public void ShowGameOverScreen()
     {
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 
     public void ShowRewardScreen()

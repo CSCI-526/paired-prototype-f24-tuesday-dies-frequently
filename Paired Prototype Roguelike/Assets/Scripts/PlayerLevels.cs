@@ -50,7 +50,7 @@ public class PlayerLevels : MonoBehaviour
 
     public void add_exp(int xp_gained){
         currentXP += xp_gained;
-        if(currentXP > xpNeededForLevel)
+        if(currentXP >= xpNeededForLevel)
         {
             while (currentXP >= xpNeededForLevel)
             {

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
     }
 
     public void ReloadLevel()
@@ -46,4 +47,8 @@ public class GameManager : MonoBehaviour
         Instance.UIManager.ShowGameOverScreen();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

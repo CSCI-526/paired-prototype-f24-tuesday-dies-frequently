@@ -2358,4 +2358,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placed: 0
   buildingName: Wall
-  buildingDesc: Blocks enemy movement.
+  buildingDesc: Blocks enemy movement, but gets damaged in the process.

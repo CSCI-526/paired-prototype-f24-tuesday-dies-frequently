@@ -36,6 +36,10 @@ public class CharacterController : MonoBehaviour
         {
             Jump();
         }
+        if(Input.GetButton("Cancel"))
+        {
+            GameManager.Instance.QuitGame();
+        }
 
     }
 

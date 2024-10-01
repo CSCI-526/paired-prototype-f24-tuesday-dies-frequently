@@ -398,7 +398,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 300
   rb: {fileID: 1615652832181997374}
-  fireRate: 5
+  fireRate: 8
   projectile: {fileID: 1733587294317518391, guid: 86a87e10bc563614bb77ae58fdf9d8c5, type: 3}
   gunBarrel: {fileID: 2143742393447370335}
   wall: {fileID: 1356194520742884125, guid: 3122d44ab508044c6bb60bd1e220411b, type: 3}
@@ -433,6 +433,9 @@ MonoBehaviour:
   placeableObjectPrefabs:
   - {fileID: 6852214484739291977, guid: 5c6dcd31d3038d64e853cefcb9d02f05, type: 3}
   - {fileID: 1272256851593019809, guid: d56f5be9feee34d67a7844a554b73dd6, type: 3}
+  - {fileID: 3732443334033032084, guid: 1be928d46a8b6db478a64830a4364934, type: 3}
+  - {fileID: 6191134258547235123, guid: bdfb57020aa84e848abb3d6d124ec1c2, type: 3}
+  - {fileID: 1272256851593019809, guid: 88d92cc50b4e783408df66e4ec9fe34d, type: 3}
   currentPlaceableObject: {fileID: 0}
   rotateIncrement: 15
 --- !u!114 &1443082488595280278

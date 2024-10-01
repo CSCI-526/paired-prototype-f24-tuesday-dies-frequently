@@ -8,7 +8,7 @@ public class Nexus : MonoBehaviour
     [SerializeField] public int maxHealth;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         GameManager.Instance.Nexus = this.gameObject;
         health = maxHealth;

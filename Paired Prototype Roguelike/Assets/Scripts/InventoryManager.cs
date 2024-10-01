@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
     {
         int i = buildingNames.IndexOf(name);
         buildingCount[i]++;
-        Debug.Log("Picked " + name);
+        //Debug.Log("Picked " + name);
         GameManager.Instance.UIManager.UpdateInventoryUI();
     }
 

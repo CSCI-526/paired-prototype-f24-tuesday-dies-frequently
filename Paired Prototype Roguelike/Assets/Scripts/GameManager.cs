@@ -23,9 +23,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this.gameObject);
 
         Instance.Player = GameObject.FindGameObjectWithTag("Player");
+        Instance.Nexus = GameObject.FindGameObjectWithTag("Nexus");
         Instance.WaveManager = GetComponent<WaveManager>();
         Instance.UIManager = GetComponent<UIManager>();
         Instance.InventoryManager = GetComponent<InventoryManager>();

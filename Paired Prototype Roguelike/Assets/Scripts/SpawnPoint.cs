@@ -51,4 +51,9 @@ public class SpawnPoint : MonoBehaviour
         GameObject enemy = Instantiate(enemyToSpawn); 
         enemy.transform.position = new Vector3(transform.position.x+Random.Range(-1*spawnRange, spawnRange), transform.position.y, transform.position.z+Random.Range(-1*spawnRange, spawnRange));
     }
+
+    public static implicit operator int(SpawnPoint v)
+    {
+        throw new NotImplementedException();
+    }
 }

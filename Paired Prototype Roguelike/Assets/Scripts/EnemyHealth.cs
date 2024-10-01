@@ -10,9 +10,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] public GameObject exp;
 
     [SerializeField] public float xpDropRate = 0.5f;  
-
+    [SerializeField] public int maxXpDrop = 3;
+    [SerializeField] public int minXpDrop = 5;
     private float currentHealth;
     private bool isInvincible = false;
+
 
     void Start()
     {
@@ -61,9 +63,12 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void DropExp(){
-        if (Random.Range(0.0f, 1.0f) >= xpDropRate){
-            GameObject xp = Instantiate(exp);
-            xp.transform.position = transform.position;
+        int xpDrop = Random.Range(minXpDrop, maxXpDrop);
+        if (Random.Range(0.0f, 1.0f) <= xpDropRate){
+            for (int i = 0; i < xpDrop; i++){
+                GameObject xp = Instantiate(exp);
+                xp.transform.position = new Vector3(transform.position.x+Random.Range(-1*1, 1), transform.position.y, transform.position.z+Random.Range(-1*1, 1));;
+            }
         }
     }
 }

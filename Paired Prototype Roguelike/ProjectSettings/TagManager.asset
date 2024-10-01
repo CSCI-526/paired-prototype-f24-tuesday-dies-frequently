@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Bullet
   - Nexus
+  - Wall
+  - Tank
   layers:
   - Default
   - TransparentFX

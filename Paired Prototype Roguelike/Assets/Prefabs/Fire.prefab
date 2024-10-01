@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1677332616392144054, guid: 86a87e10bc563614bb77ae58fdf9d8c5, type: 3}
       propertyPath: speed
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1677332616392144054, guid: 86a87e10bc563614bb77ae58fdf9d8c5, type: 3}
       propertyPath: damage
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1677332616392144054, guid: 86a87e10bc563614bb77ae58fdf9d8c5, type: 3}
       propertyPath: maxLifetime
@@ -220,7 +220,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2

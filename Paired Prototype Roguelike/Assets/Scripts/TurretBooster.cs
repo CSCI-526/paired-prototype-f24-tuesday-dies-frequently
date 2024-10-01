@@ -17,7 +17,7 @@ public class TurretBooster : Building
 
     private void Update()
     {
-        antenna.transform.Rotate(0, rotationSpeed, 0);
+        antenna.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
     }
     void BoostNeighbors(float radius = 3.0f)
     {

@@ -13,8 +13,11 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public int enemyCount = 0;
     [SerializeField] public int wave = 0;
     [SerializeField] public float difficulty = 1.2f;
+
     [SerializeField] public float tankRate = 0.8f;
     [SerializeField] GameObject tank;
+    [SerializeField] public int tankSpawnStartWave = 5;
+
     [SerializeField] public List<GameObject> enemyPrefabs = new List<GameObject>();
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
@@ -48,18 +51,30 @@ public class WaveManager : MonoBehaviour
     void SpawnWave()
     {
         ++wave;
-        if (wave > 5){
-            SpawnPoint randomSpawnPoint = spawnPoints[Random.Range(0, 4)];
-            if (Random.Range(0.0f, 1.0f) <= tankRate){
-                GameObject tankEnemy = Instantiate(tank); 
-                tankEnemy.transform.position = randomSpawnPoint.transform.position;
-            }
-        }
+        SpawnNormalEnemies();
+        SpawnTanks();
+        GameManager.Instance.UIManager.UpdateUI();
+    }
+
+    void SpawnNormalEnemies()
+    {
         foreach (SpawnPoint sp in spawnPoints)
         {
             sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay), wave, difficulty);
             // sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay));
         }
-        GameManager.Instance.UIManager.UpdateUI();
+    }
+
+    void SpawnTanks()
+    {
+        for (int i = wave; i > tankSpawnStartWave; --i)
+        {
+            SpawnPoint randomSpawnPoint = spawnPoints[Random.Range(0, 4)];
+            if (Random.Range(0.0f, 1.0f) <= tankRate)
+            {
+                GameObject tankEnemy = Instantiate(tank);
+                tankEnemy.transform.position = randomSpawnPoint.transform.position;
+            }
+        }
     }
 }

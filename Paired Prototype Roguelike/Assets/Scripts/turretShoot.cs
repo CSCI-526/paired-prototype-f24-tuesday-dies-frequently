@@ -31,6 +31,12 @@ public class turretShoot : Building
             Shoot();
         }
     }
+    public override void OnPlace()
+    {
+        placed = true;
+        GetComponent<Collider>().enabled = true;
+        CheckForBoost();
+    }
 
     void FixedUpdate()
     {
@@ -69,7 +75,7 @@ public class turretShoot : Building
     {
         target = null;
         float minRange = maxRange;
-        foreach(GameObject enemy in GameManager.Instance.WaveManager.enemies)
+        foreach (GameObject enemy in GameManager.Instance.WaveManager.enemies)
         {
             float dist = (enemy.transform.position - transform.position).magnitude;
             if (dist < minRange)
@@ -79,4 +85,24 @@ public class turretShoot : Building
             }
         }
     }
+
+    override public void Boost()
+    {
+        ++turnSpeed;
+        ++fireRate;
+        ++maxRange;
+    }
+    void CheckForBoost(float radius = 3.0f)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);// -1, QueryTriggerInteraction.Collide);
+        foreach (var other in hitColliders)
+        {
+            if (other.gameObject.GetComponent<TurretBooster>() != null)
+            {
+                Boost();
+                //Debug.Log("Boosted by other Turret!");
+            }
+        }
+    }
+
 }

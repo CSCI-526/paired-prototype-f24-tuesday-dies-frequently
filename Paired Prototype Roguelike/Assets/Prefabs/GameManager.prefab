@@ -64,7 +64,10 @@ MonoBehaviour:
   maxSpawnDelay: 3
   enemyCount: 0
   wave: 0
-  difficulty: 1.2
+  difficulty: 0.8
+  tankRate: 1
+  tank: {fileID: 6013629208632606210, guid: 2f4b90fa476cd40549e7d9dc2d55c7b9, type: 3}
+  tankSpawnStartWave: 5
   enemyPrefabs:
   - {fileID: 6013629208632606210, guid: 408d845f82dc9bb4387177ba1b39936c, type: 3}
   enemies: []
@@ -83,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreBoard: {fileID: 0}
   expUI: {fileID: 0}
+  inventoryUI: {fileID: 0}
   gameOverScreen: {fileID: 0}
   rewardMenu: {fileID: 0}
 --- !u!114 &6683548619100361680

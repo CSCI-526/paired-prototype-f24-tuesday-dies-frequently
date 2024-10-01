@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4813585925586114357}
   - component: {fileID: 5112603536194239189}
+  - component: {fileID: 1399077278889937836}
   m_Layer: 0
   m_Name: Gun Turret
   m_TagString: Untagged
@@ -55,6 +56,27 @@ MonoBehaviour:
   projectile: {fileID: 1733587294317518391, guid: 86a87e10bc563614bb77ae58fdf9d8c5, type: 3}
   gunBarrel: {fileID: 2130665220319076271}
   target: {fileID: 0}
+--- !u!65 &1399077278889937836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272256851593019809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.21279308, y: 0.1496009, z: 0.23104334}
+  m_Center: {x: -0.0003183484, y: 0.15652575, z: -0.005397886}
 --- !u!1 &2130665220319076271
 GameObject:
   m_ObjectHideFlags: 0

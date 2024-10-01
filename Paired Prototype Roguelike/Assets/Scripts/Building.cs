@@ -16,4 +16,9 @@ public class Building : MonoBehaviour
             c.enabled = true;
         }
     }
+
+    public virtual void Boost()
+    {
+
+    }
 }

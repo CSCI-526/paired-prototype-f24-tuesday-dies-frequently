@@ -61,7 +61,6 @@ public class WaveManager : MonoBehaviour
         foreach (SpawnPoint sp in spawnPoints)
         {
             sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay), wave, difficulty);
-            // sp.SpawnEnemy(Random.Range(0.0f, maxSpawnDelay));
         }
     }
 

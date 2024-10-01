@@ -290,3 +290,4 @@ MonoBehaviour:
   exp_value: 1
   period: 1
   amplitude: 0.5
+  lifetime: 15

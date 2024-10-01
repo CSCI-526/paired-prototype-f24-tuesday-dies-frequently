@@ -8,13 +8,14 @@ public class ExperiencePickup : MonoBehaviour
     [SerializeField] protected int exp_value = 1;
     [SerializeField] protected float period = 1.0f;
     [SerializeField] protected float amplitude = 1.0f;
+    [SerializeField] protected float lifetime = 20.0f;
 
     private float counter = 0;
     float dir = 1.0f;
 
     void Start()
     {
-        
+        StartCoroutine(Countdown());
     }
 
     // Update is called once per frame
@@ -36,5 +37,11 @@ public class ExperiencePickup : MonoBehaviour
             Destroy(gameObject);
             
         }
+    }
+
+    IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
     }
 }

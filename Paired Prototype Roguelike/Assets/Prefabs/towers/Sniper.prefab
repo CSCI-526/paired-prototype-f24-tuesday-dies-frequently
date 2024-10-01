@@ -50,7 +50,7 @@ MonoBehaviour:
   buildingName: Sniper Turret
   buildingDesc: Excels at picking off targets at long range.
   fireRate: 0.5
-  maxRange: 50
+  maxRange: 30
   turnSpeed: 2
   projectile: {fileID: 2516476828890733242, guid: 533f60986f9a5c8498034a5024d68861, type: 3}
   gunBarrel: {fileID: 2130665220319076271}

@@ -1202,6 +1202,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nexus
       objectReference: {fileID: 0}
+    - target: {fileID: 831108058407699104, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
+      propertyPath: XP
+      value: 
+      objectReference: {fileID: 6435648702068270667, guid: 08541f6d46a47df46ba546e927cd8967, type: 3}
+    - target: {fileID: 831108058407699104, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
+      propertyPath: spawnXP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 831108058407699104, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
+      propertyPath: offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 831108058407699104, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
+      propertyPath: xpSpawnInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 831108058407699104, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
+      propertyPath: xpSpawnOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7341533106581737996, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.99172133
@@ -1212,7 +1232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341533106581737996, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 7341533106581737996, guid: e4084860b2d36c2468145aa8edc4c065, type: 3}
       propertyPath: m_LocalPosition.z
